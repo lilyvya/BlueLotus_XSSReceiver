@@ -596,6 +596,12 @@ $(document).ready(function() {
             $(leftcolumn).append(method_item);
             $(leftcolumn).append(location_item);
 
+            if(datarecord.post_data!=undefined&&datarecord.post_data.screenshot!=undefined)
+            {
+                var screenimg= "<div style='margin: 10px;'><b>截图：</b><br><a target='_blank' href='"+datarecord.post_data.screenshot+"'><img height='280px' src='"+datarecord.post_data.screenshot+"'/></a></div>";
+                $(leftcolumn).append(screenimg);
+            }
+
             var time_item = "<div style='margin: 10px;'><b>时间：</b> " + datarecord.request_time_string + "</div>";
             var port_item = "<div style='margin: 10px;'><b>端口：</b> " + datarecord.user_port + "</div>";
             var uri_item = "<div style='margin: 10px;'><b>访问地址：</b> " + datarecord.request_URI + "</div>";
